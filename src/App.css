@@ -1,38 +1,147 @@
+/* App.css - Styling per Gestione Paragrafi con tema oro/bianco/nero */
+
+/* Stili globali - impostazioni di base per tutta l'applicazione */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font moderno e leggibile */
+  margin: 0; /* Rimuove i margini predefiniti */
+  padding: 0; /* Rimuove i padding predefiniti */
+  background-color: #DAA520; /* Sfondo oro come richiesto */
+  color: #000000; /* Testo nero come richiesto */
+}
+
+/* Contenitore principale dell'applicazione */
 .App {
-  text-align: center;
+  max-width: 800px; /* Larghezza massima per migliorare la leggibilità */
+  margin: 0 auto; /* Centra il contenitore nella pagina */
+  padding: 20px; /* Spazio interno */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Stili per l'header - contiene il titolo e i pulsanti principali */
+header {
+  background-color: #FFFFFF; /* Sfondo bianco per i container come richiesto */
+  border-radius: 8px; /* Angoli arrotondati per estetica */
+  padding: 20px; /* Spaziatura interna */
+  margin-bottom: 20px; /* Separazione dall'elemento successivo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombra leggera per profondità */
+  display: flex; /* Layout flessibile */
+  justify-content: space-between; /* Distribuisce gli elementi sull'asse orizzontale */
+  align-items: center; /* Allinea gli elementi verticalmente */
+  flex-wrap: wrap; /* Permette il wrapping su schermi piccoli */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Stile del titolo nell'header */
+header h1 {
+  margin: 0; /* Rimuove il margine predefinito */
+  color: #000000; /* Testo nero come richiesto */
+  font-size: 24px; /* Dimensione del font */
+}
+
+/* Gruppo di pulsanti nell'header */
+.button-group {
+  display: flex; /* Layout flessibile per i pulsanti */
+  gap: 10px; /* Spazio tra i pulsanti */
+}
+
+/* Stile base per tutti i pulsanti */
+button {
+  background-color: #B8860B; /* Oro scuro per i pulsanti */
+  color: white; /* Testo bianco per contrasto */
+  border: none; /* Rimuove il bordo predefinito */
+  border-radius: 4px; /* Angoli arrotondati */
+  padding: 8px 12px; /* Spaziatura interna */
+  cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+  font-size: 14px; /* Dimensione del testo */
+  transition: background-color 0.2s; /* Animazione al cambio di colore */
+}
+
+/* Effetto hover per i pulsanti */
+button:hover {
+  background-color: #CD950C; /* Oro leggermente più chiaro al passaggio del mouse */
+}
+
+/* Effetto al click del pulsante */
+button:active {
+  transform: translateY(1px); /* Leggero movimento verso il basso */
+}
+
+/* Stile specifico per il pulsante "Nascondi Tutti" */
+button:nth-child(2) {
+  background-color: #8B6914; /* Oro più scuro per diversificare */
+}
+
+/* Effetto hover per il pulsante "Nascondi Tutti" */
+button:nth-child(2):hover {
+  background-color: #9F7119; /* Versione più chiara al passaggio del mouse */
+}
+
+/* Contenitore per tutti i paragrafi */
+.paragraphs-container {
+  display: flex; /* Layout flessibile */
+  flex-direction: column; /* Organizza i paragrafi in colonna */
+  gap: 15px; /* Spazio tra i paragrafi */
+}
+
+/* Stile per ciascun paragrafo */
+.paragraph {
+  background-color: #FFFFFF; /* Sfondo bianco per i container come richiesto */
+  border-radius: 8px; /* Angoli arrotondati */
+  padding: 15px; /* Spaziatura interna */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+  transition: all 0.3s ease; /* Animazione per cambiamenti di stato */
+  margin-bottom: 10px; /* Margine sotto per separazione */
+}
+
+/* Intestazione di ciascun paragrafo con titolo e pulsante */
+.paragraph-header {
+  display: flex; /* Layout flessibile */
+  justify-content: space-between; /* Distribuisce gli elementi sull'asse orizzontale */
+  align-items: center; /* Allinea gli elementi verticalmente */
+  border-bottom: 1px solid #F0E68C; /* Separatore oro chiaro */
+  padding-bottom: 10px; /* Spaziatura sotto */
+  margin-bottom: 10px; /* Margine sotto */
+}
+
+/* Titolo di ciascun paragrafo */
+.paragraph-header h3 {
+  margin: 0; /* Rimuove il margine predefinito */
+  color: #000000; /* Testo nero come richiesto */
+}
+
+/* Pulsante per attivare/disattivare un singolo paragrafo */
+.paragraph-header button {
+  background-color: #D4AF37; /* Oro leggermente diverso per i pulsanti dei paragrafi */
+  font-size: 12px; /* Font più piccolo */
+  padding: 5px 10px; /* Spaziatura interna ridotta */
+}
+
+/* Effetto hover per i pulsanti dei paragrafi */
+.paragraph-header button:hover {
+  background-color: #EECF5F; /* Oro più chiaro al passaggio del mouse */
+}
+
+/* Testo del paragrafo */
+.paragraph p {
+  margin: 0; /* Rimuove il margine predefinito */
+  line-height: 1.5; /* Altezza della linea per migliorare la leggibilità */
+  color: #000000; /* Testo nero come richiesto */
+  
+}
+
+/* Adattamenti per schermi piccoli (responsività) */
+@media (max-width: 600px) {
+  /* Modifica il layout dell'header */
+  header {
+    flex-direction: column; /* Impila gli elementi verticalmente */
+    align-items: flex-start; /* Allinea a sinistra */
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  /* Sposta il gruppo di pulsanti sotto il titolo */
+  .button-group {
+    margin-top: 15px; /* Aggiunge spazio sopra */
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* Aggiunge spazio sotto il titolo */
+  header h1 {
+    margin-bottom: 15px;
   }
 }
